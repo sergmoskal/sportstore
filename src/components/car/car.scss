@@ -1,3 +1,13 @@
-car {
+car-item {
+  .brand {
+    font-family: bold;
+    font-size: large;
+  }
 
+  .sold-style {
+    background-color: pink;
+  }
+  span {
+    font-size: medium;
+  }
 }

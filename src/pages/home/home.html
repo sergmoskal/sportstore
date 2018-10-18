@@ -1,8 +1,11 @@
-<menu></menu>
+<ion-header>
+    <main-menu></main-menu>
+</ion-header>
+
 <ion-content padding>
-  <cars-form></cars-form>
-    <ion-list no-lines>
-       <car  *ngFor='let item of [1,2]'></car>
-    </ion-list>
+  <cars-form (addCar)='AddCar($event)'></cars-form>
+  <ion-list no-lines>
+       <car-item  *ngFor='let car of cars' [car]='car' (deleteCar)='delCar($event)'></car-item>
+  </ion-list>
 
 </ion-content>

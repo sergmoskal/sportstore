@@ -1,1 +1,34 @@
-
+<form>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item no-padding>
+          <ion-label floating>Car Name</ion-label>
+          <ion-input [(ngModel)]='carName' name="carName" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item no-padding>
+          <ion-label floating>Car Model</ion-label>
+          <ion-input [(ngModel)]='carModel' name="carModel" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="top20">
+      <ion-col col-6>
+        <button ion-button  outline icon-start block (click)='onAdd($event)'>
+            <ion-icon name='add-circle'></ion-icon>
+            Add car
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block color='danger' outline icon-start>
+          <ion-icon name='code-download'></ion-icon>
+          Load cars
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

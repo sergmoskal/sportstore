@@ -1,4 +1,31 @@
-<ion-item>
-  <span>TSt</span>
-</ion-item>
-
+<ion-card>
+  <ion-grid [ngClass]="{'sold-style':car.isSold}">
+    <ion-row>
+      <ion-col col-6>
+         <span class='brand'><b>{{car.brand}}</b></span>
+      </ion-col>
+      <ion-col text-right>
+        <span>{{car.date| date:'dd:MM:yyyy'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <span>{{car.name}}</span>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <button [disabled]='car.isSold' ion-button outline block color='secondary' (click)='onBuy($event)' icon-start>
+             <ion-icon name='cart'></ion-icon>
+             Buy
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline block color='danger' (click)='onDelete($event)' icon-start>
+              <ion-icon name='trash'></ion-icon>
+              Delete
+          </button>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
