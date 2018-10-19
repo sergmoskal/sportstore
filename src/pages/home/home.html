@@ -3,9 +3,9 @@
 </ion-header>
 
 <ion-content padding>
-  <cars-form (addCar)='AddCar($event)'></cars-form>
+  <cars-form></cars-form>
   <ion-list no-lines>
-       <car-item  *ngFor='let car of cars' [car]='car' (deleteCar)='delCar($event)'></car-item>
+       <car-item  *ngFor='let car of (cars | async).cars' [car]='car'></car-item>
   </ion-list>
 
 </ion-content>

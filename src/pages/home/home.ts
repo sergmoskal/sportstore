@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 import {Car} from '../../app/models/car';
+import { ICars } from './../../app/models/car';
+import {Store} from '@ngrx/store';
+import { AppState } from './../../app/redux/app.state';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
-  public cars:Car[]=[];
-  constructor(public navCtrl: NavController) {
+export class HomePage implements OnInit {
+  public cars:Observable<ICars>;
+  constructor(public navCtrl: NavController,private store:Store<AppState>) {
   }
 
-  public AddCar(car:Car):void {
-     this.cars.push(car);
-  }
-
-  public delCar(car:Car):void {
-     this.cars = this.cars.filter(c => c.id != car.id);
+  ngOnInit():void {
+    this.cars = this.store.select('carPage');
   }
 }

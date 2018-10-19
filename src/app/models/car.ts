@@ -7,3 +7,7 @@ export class Car {
     public isSold:boolean=false
   ){}
 }
+
+export interface ICars {
+   cars:Car[]
+}

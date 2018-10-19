@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import {Car} from '../../app/models/car';
+import { CarService } from './../../app/services/car.service';
 
 @Component({
   selector: 'cars-form',
@@ -12,7 +13,7 @@ export class CarsFormComponent {
   public carModel:string;
   public carName:string;
 
-  constructor() {
+  constructor(private carService:CarService) {
     this.carModel=this.carName='';
     this.id = 0;
   }
@@ -21,10 +22,13 @@ export class CarsFormComponent {
      if(!this.carName || !this.carModel)
          return;
 
-     this.id = ++this.id;
-     let car:Car = new Car(this.carModel,this.carName,new Date(),this.id);
+     let car:Car = new Car(this.carModel,this.carName,new Date());
      this.Clear();
-     this.addCar.emit(car);
+     this.carService.addCar(car);
+  }
+
+  public onLoad():void {
+     this.carService.loadCars();
   }
 
   private Clear():void {

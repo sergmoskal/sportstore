@@ -1,0 +1,32 @@
+{
+  "cars": [
+    {
+      "brand": "f",
+      "name": "f",
+      "date": "2018-10-19T14:26:29.000Z",
+      "isSold": true,
+      "id": 2
+    },
+    {
+      "brand": "c",
+      "name": "c",
+      "date": "2018-10-19T14:26:37.607Z",
+      "isSold": false,
+      "id": 3
+    },
+    {
+      "brand": "a",
+      "name": "a",
+      "date": "2018-10-19T15:04:22.903Z",
+      "isSold": false,
+      "id": 4
+    },
+    {
+      "brand": "a",
+      "name": "a",
+      "date": "2018-10-19T15:04:34.022Z",
+      "isSold": false,
+      "id": 5
+    }
+  ]
+}
